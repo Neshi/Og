@@ -6,6 +6,8 @@
 // @author       Neshi
 // @match        https://coma.gameforge.com/ticket/index.php?page=tickets&action=go
 // @match        https://ogamepl.comastuff.com/
+// @updateURL    https://github.com/Neshi/Og/raw/main/scripts/SGOSupportHelper.user.js
+// @downloadURL  https://github.com/Neshi/Og/raw/main/scripts/SGOSupportHelper.user.js
 // @require      https://code.jquery.com/jquery-3.6.0.min.js
 // @icon         https://www.google.com/s2/favicons?domain=gameforge.com
 // @grant        GM_setValue
