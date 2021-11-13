@@ -27,11 +27,11 @@
     },
     {
       "title": "Spam flotami - ostrzeżenie",
-      "content": "Wysyłanie długotrwałych \"ataków\", które mają na celu tylko i wyłącznie spam w podglądzie gry innej osoby, jest traktowane jako spam flotą i karane wg Zasad Gry.\\n\\nNakazuję Panu zawrócić flotę lecącą na gracza ....\\n\\nTym razem udzielam Panu ostrzeżenia. Kolejne takie wykroczenie skutkować będzie blokadą konta.\\nJeżeli ma Pan/Pani jakieś pytania, proszę o kontakt przez system Support.\\n\\nz poważaniem\\n[Operator]\\n"
+      "content": "Wysyłanie długotrwałych \"ataków\", które mają na celu tylko i wyłącznie spam w podglądzie gry innej osoby, jest traktowane jako spam flotą i karane wg Zasad Gry.\n\nNakazuję Panu zawrócić flotę lecącą na gracza ....\n\nTym razem udzielam Panu ostrzeżenia. Kolejne takie wykroczenie skutkować będzie blokadą konta.\nJeżeli ma Pan/Pani jakieś pytania, proszę o kontakt przez system Support.\n\nz poważaniem\n[Operator]\n"
     },
     {
       "title": "Nakaz odsyłki surowców",
-      "content": "Witam, dnia xxx gracz xxx wysłał do Pana xxx surowców. Każdy handel musi być ukończony w ciągu 72 godzin od dostawy. W związku z tym, że Pan się z niego nie wywiązał nakazuję odesłanie do gracza xxx brakujących surowców w ciągu 48 godzin. Tym razem przesyłam ostrzeżenie. Kolejne złamanie zasad gry może zakończyć się blokadą konta. Jeżeli ma Pan/Pani jakieś pytania, proszę o kontakt przez system Support.\n\nz poważaniem\n[Operator]\n"
+      "content": "Witam,\ndnia xxx gracz xxx wysłał do Pana xxx surowców. Każdy handel musi być ukończony w ciągu 72 godzin od dostawy. W związku z tym, że Pan się z niego nie wywiązał nakazuję odesłanie do gracza xxx brakujących surowców w ciągu 48 godzin. Tym razem przesyłam ostrzeżenie. Kolejne złamanie zasad gry może zakończyć się blokadą konta. \nJeżeli ma Pan/Pani jakieś pytania, proszę o kontakt przez system Support.\n\nz poważaniem\n[Operator]\n"
     },
     {
       "title": "Wulgaryzmy - nick/nazwy planet",
@@ -39,11 +39,11 @@
     },
     {
       "title": "Wulgarne nazwy planet",
-      "content": "Nazwy planet na pozycjach X:xxx:xx są niezgodne z Ogólnymi Warunkami Korzystania.\nTym razem przesyłam ostrzeżenie i zmieniam nieregulaminowe nazwy planet. Ponowne złamanie regulaminu zakończy się nałożeniem blokady na konto.Jeżeli ma Pan/Pani jakieś pytania, proszę o kontakt przez system Support.\n\npozdrawiam\n[Operator]\n"
+      "content": "Nazwy planet na pozycjach X:xxx:xx są niezgodne z Ogólnymi Warunkami Korzystania.\nTym razem przesyłam ostrzeżenie i zmieniam nieregulaminowe nazwy planet. Ponowne złamanie regulaminu zakończy się nałożeniem blokady na konto.\nJeżeli ma Pan/Pani jakieś pytania, proszę o kontakt przez system Support.\n\npozdrawiam\n[Operator]\n"
     },
     {
       "title": "Bugusing przy użyciu sond szpiegowskich",
-      "content": "Witam\nNa 6 sekund (lub mniej) przed atakiem (dolotem floty) zakazujemy jakichkolwiek działań ze strony agresora bądź obrońcy a także wszystkich innych osób, które mogą doprowadzić do lagów, bugu z nierozstrzygniętą walką lub uniemożliwienia ucieczki obrońcy. Pan złamał tą zasadę podczas ataku na gracza ... . Tym razem przesyłam ostrzeżenie. Kolejne złamanie Zasad Gry skończy się blokadą konta\npozdrawiam\n[Operator]\n" 
+      "content": "Witam\nNa 6 sekund (lub mniej) przed atakiem (dolotem floty) zakazujemy jakichkolwiek działań ze strony agresora bądź obrońcy a także wszystkich innych osób, które mogą doprowadzić do lagów, bugu z nierozstrzygniętą walką lub uniemożliwienia ucieczki obrońcy. Pan złamał tą zasadę podczas ataku na gracza ... . Tym razem przesyłam ostrzeżenie. Kolejne złamanie Zasad Gry skończy się blokadą konta\n\npozdrawiam\n[Operator]\n" 
     }
   ]
 }
