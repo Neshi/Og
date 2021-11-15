@@ -4,7 +4,7 @@
 // @version      0.2
 // @description  Skrypt ten przypisuje przy temacie nick operatora/ów bazując na informacjach jakie są umieszczone na stronie https://ogamepl.comastuff.com/ . Przy nieobsadzonych uniach nick nie jest dodawany.
 // @author       Neshi
-// @match        https://coma.gameforge.com/ticket/index.php?page=tickets&action=go
+// @match        https://coma.gameforge.com/ticket/index.php?page=tickets*
 // @match        https://ogamepl.comastuff.com/
 // @updateURL    https://github.com/Neshi/Og/raw/main/scripts/SGOSupportHelper.user.js
 // @downloadURL  https://github.com/Neshi/Og/raw/main/scripts/SGOSupportHelper.user.js
