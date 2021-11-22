@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         SGO+ Support Helper
 // @namespace    https://comastuff.com/
-// @version      0.3
+// @version      0.4
 // @description  Skrypt ten przypisuje przy temacie nick operatora/ów bazując na informacjach jakie są umieszczone na stronie https://ogamepl.comastuff.com/ . Przy nieobsadzonych uniach nick nie jest dodawany.
 // @author       Neshi
 // @match        https://coma.gameforge.com/ticket/index.php?page=tickets*
@@ -25,23 +25,25 @@
         let regex = /^(\(([^)]+)\).*:(.*))/
 
         var lines = $('h3:contains("Operatorzy")').next().text().split('\n')
+        var htmlLines = $('h3:contains("Operatorzy")').next().html().split('\n')
 
         for(let i=0;i<lines.length;i++){
             let line = lines[i].replace(' ','');
+            let holiday = htmlLines[i] !== undefined ? htmlLines[i].indexOf('urlop')>0?' (u)':'':'';
             if (regex68.test(line)){
                 let match = line.match(regex68)
-                //console.log('key:68;value:'+match[1].replace(' ',''))
+                //console.log('key:68;value:'+match[1].replace(' ','')+holiday)
                 uniSettings.push({
                     key:'68',
-                    value:match[1].replace(/\s/g,'')
+                    value:match[1].replace(/\s/g,'')+holiday
                 });
             }
             if (regex.test(line)){
                 let match = line.match(regex)
-                //console.log('key:'+match[2]+';value:'+match[3].replace(' ',''))
+                //console.log('key:'+match[2]+';value:'+match[3].replace(' ','')+holiday)
                 uniSettings.push({
                     key:match[2],
-                    value:match[3].replace(/\s/g,'')
+                    value:match[3].replace(/\s/g,'')+holiday
                 });
             }
         }
