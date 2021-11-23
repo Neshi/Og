@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         SGO+ Support Helper
 // @namespace    https://comastuff.com/
-// @version      0.4
+// @version      0.5
 // @description  Skrypt ten przypisuje przy temacie nick operatora/ów bazując na informacjach jakie są umieszczone na stronie https://ogamepl.comastuff.com/ . Przy nieobsadzonych uniach nick nie jest dodawany.
 // @author       Neshi
 // @match        https://coma.gameforge.com/ticket/index.php?page=tickets*
@@ -60,9 +60,11 @@
 
         $('table table table tr:gt(2)').each(function(){
             let currentServerText = $(this).find('td:eq(2)').text();
-            let go = uniSettings.find(x=>x.key==currentServerText).value;
-            if (go.length>0){
-                $(this).find('td:eq(1)').append(' ('+go+')')
+            if (currentServerText != '00'){
+                let go = uniSettings.find(x=>x.key==currentServerText).value;
+                if (go.length>0){
+                    $(this).find('td:eq(1)').append(' ('+go+')')
+                }
             }
         });
     }
