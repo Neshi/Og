@@ -4,6 +4,8 @@
 // @version      0.1
 // @description  Skrypt ten pozwala na szybsze liczenie surowców podczas wyliczania darowizn. Ustawia także domyślne parametry toola.
 // @author       Neshi
+// @updateURL    https://github.com/Neshi/Og/raw/main/scripts/Sumator.js
+// @downloadURL  https://github.com/Neshi/Og/raw/main/scripts/Sumator.js
 // @match        https://art.comastuff.com/ogame/resources.php
 // @icon         https://www.google.com/s2/favicons?domain=comastuff.com
 // @grant        none
