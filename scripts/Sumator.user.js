@@ -1,13 +1,13 @@
 // ==UserScript==
 // @name         Sumator
 // @namespace    https://comastuff.com/
-// @version      0.1
+// @version      0.2
 // @description  Skrypt ten pozwala na szybsze liczenie surowców podczas wyliczania darowizn. Ustawia także domyślne parametry toola.
 // @author       Neshi
 // @updateURL    https://github.com/Neshi/Og/raw/main/scripts/Sumator.js
 // @downloadURL  https://github.com/Neshi/Og/raw/main/scripts/Sumator.js
 // @match        https://art.comastuff.com/ogame/resources.php
-// @icon         https://www.google.com/s2/favicons?domain=comastuff.com
+// @icon         https://support.gameforge.com/template/games/ogame/favicon.ico
 // @grant        none
 // ==/UserScript==
 
