@@ -19,7 +19,7 @@
     },
     {
       "title": "Nakaz odsyłki surowców na planetę GO/SGO/GA",
-      "content": "Witam.\nW związku z blokadą za push, częścią kary jest nakaz odsyłki surowców na planetę GO (Operatora Gry), SGO(Super Operatora Gry) lub GA (Administratora Gry).\n\nSurowce do odesłania to:\n\nMetal :\nKryształ :\nDeuter :\n\nTermin odesłania surowców to:\n\nJednocześnie przypominam, że w czasie trwania kary, gracz nie może otrzymywać transportów/darowizn od innych. \nJeżeli ma Pan/Pani jakieś dodatkowe pytania, proszę o kontakt przez system Support.\n\nPozdrawiam\n[Operator]\n"
+      "content": "Witam,\nw związku z blokadą za push, częścią kary jest nakaz odsyłki surowców na planetę GO (Operatora Gry), SGO(Super Operatora Gry) lub GA (Administratora Gry).\n\nSurowce do odesłania to:\n\nMetal :\nKryształ :\nDeuter :\n\nTermin odesłania surowców to:\n\nJednocześnie przypominam, że w czasie trwania kary, gracz nie może otrzymywać transportów/darowizn od innych. \nJeżeli ma Pan/Pani jakieś dodatkowe pytania, proszę o kontakt przez system Support.\n\nPozdrawiam\n[Operator]\n"
     },
     {
       "title": "Przypomnienie",
@@ -44,6 +44,10 @@
     {
       "title": "Bugusing przy użyciu sond szpiegowskich",
       "content": "Witam\nNa 6 sekund (lub mniej) przed atakiem (dolotem floty) zakazujemy jakichkolwiek działań ze strony agresora bądź obrońcy a także wszystkich innych osób, które mogą doprowadzić do lagów, bugu z nierozstrzygniętą walką lub uniemożliwienia ucieczki obrońcy. Pan złamał tą zasadę podczas ataku na gracza ... . Tym razem przesyłam ostrzeżenie. Kolejne złamanie Zasad Gry skończy się blokadą konta\n\npozdrawiam\n[Operator]\n" 
+    },
+    {
+      "title": "Darowizna - ostrzeżenie i nakaz odsyłki",
+      "content": "Witam,\nw związku z przekroczeniem dopuszczalnej liczby surowców darowanych, udzielam Panu ostrzeżenia i nakazuję odsyłkę surowców do gracza darującego.\n\nSurowce do odesłania: \n\nTermin odesłania surowców to: \n\nJednocześnie przypominam, że w czasie trwania kary, gracz nie może otrzymywać transportów/darowizn od innych. Jeżeli ma Pan/Pani jakieś dodatkowe pytania, proszę o kontakt przez system Support.\n\nPozdrawiam\n[Operator]\n" 
     }
   ]
 }
