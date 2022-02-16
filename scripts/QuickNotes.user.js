@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name         Quick notes
-// @version      2.0
-// @description  Skrypt ten pozwala na szybsze dodawanie notatek, jeśli notatka będzie za długo podzieli ją.
+// @version      2.5
+// @description  Skrypt ten pozwala na szybsze dodawanie notatek, jeśli notatka będzie za długo podzieli ją. Automatycznie ją anonimizuje korzystając z https://art.comastuff.com/anonymous.php
 // @author       v0ldem0rt, Neshi
 // @match        http*://*.ogame.gameforge.com/game/admin2/seenotes.php?uid=*&notetyp=1
 // @updateURL    https://github.com/Neshi/Og/raw/main/scripts/QuickNotes.user.js
 // @downloadURL  https://github.com/Neshi/Og/raw/main/scripts/QuickNotes.user.js
-// @grant        none
+// @grant        GM_xmlhttpRequest
 // ==/UserScript==
 
 
@@ -25,8 +25,12 @@ function getFirstLine(text) {
 }
 
 function splitNoteString() {
-    var userid = document.URL.match(/uid=(\d+)/)[1];
     var text = document.getElementById("noteToSplit").value;
+    anonimizeNote(text);
+}
+
+function saveNote(text){
+    var userid = document.URL.match(/uid=(\d+)/)[1];
     var headerText = getFirstLine(text);
     var array = text.split('\n');//wordwrap(text, 55000, '\n'); // text.match(/.{1,55000}(\s|$|\-)/g); //text.match(/(.|[\r\n]){1,55000}/g);
     let endArray = [];
@@ -61,3 +65,18 @@ function splitNoteString() {
     document.getElementById("noteToSplit").value = "Note added successfully";
 }
 
+function anonimizeNote(note){
+
+    GM_xmlhttpRequest({
+        method: "POST",
+        url: "https://art.comastuff.com/anonymous.php",
+        headers:    {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        data: "action=do&stuff="+encodeURIComponent(note)+"&noblank=1",
+        onload: function(response){
+                console.log(response);
+                saveNote(response.responseText);
+            }
+    });
+}
