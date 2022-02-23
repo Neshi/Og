@@ -1,10 +1,11 @@
 // ==UserScript==
 // @name         Fleet page helper
 // @namespace    https://comastuff.com/
-// @version      1.0
+// @version      1.1
 // @description  Skrypt ten pozwala na szybsze kopiowanie tabeli z logami flot.
 // @author       Neshi
-// @match        https://*.ogame.gameforge.com/game/admin2/flottenlog.php*
+// @match        https://*.ogame.gameforge.com/game/admin2/flottenlog.php?uid=*
+// @exclude      https://*.ogame.gameforge.com/game/admin2/flottenlog.php?uid=*&touser=*
 // @icon         https://support.gameforge.com/template/games/ogame/favicon.ico
 // @updateURL    https://github.com/Neshi/Og/raw/main/scripts/FleetPageHelper.user.js
 // @downloadURL  https://github.com/Neshi/Og/raw/main/scripts/FleetPageHelper.user.js
