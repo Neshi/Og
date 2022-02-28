@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Fleet page helper
 // @namespace    https://comastuff.com/
-// @version      1.1
+// @version      1.2
 // @description  Skrypt ten pozwala na szybsze kopiowanie tabeli z logami flot.
 // @author       Neshi
 // @match        https://*.ogame.gameforge.com/game/admin2/flottenlog.php?uid=*
@@ -22,6 +22,6 @@
 
     $('table:has(tr)').before('<button class="copyTable" type="button" style="float:right;margin-bottom:5px;" >Kopiuj tabele!</button>')
 
-    $('body').append('<script type="text/javascript"> $(\'button.copyTable\').click(function() { copyTextToClipboard($(\'button.copyTable\').next().html().replaceAll(\'flottenlog.php\',window.location.origin+window.location.pathname)); });</script>');
+    $('body').append('<script type="text/javascript"> $(\'button.copyTable\').click(function() { copyTextToClipboard($(\'button.copyTable\').next()[0].outerHTML.replaceAll(\'flottenlog.php\',window.location.origin+window.location.pathname)); });</script>');
 
 })();
