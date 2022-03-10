@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Sumator
 // @namespace    https://comastuff.com/
-// @version      0.9
+// @version      1.0
 // @description  Skrypt ten pozwala na szybsze liczenie surowców podczas wyliczania darowizn. Ustawia także domyślne parametry toola.
 // @author       Neshi
 // @updateURL    https://github.com/Neshi/Og/raw/main/scripts/Sumator.user.js
@@ -51,7 +51,7 @@
         console.log(dateMatch[1]);
         const monday = getPreviousMonday(dateMatch[1]);
         const sunday = nextDay(7, dateMatch[1]);
-        const title = 'Darowizny ' + ("0" + monday.getDate()).slice(-2) + '.' + ("0" + (monday.getMonth())).slice(-2) + '-' + ("0" + sunday.getDate()).slice(-2) + '.' + ("0" + (sunday.getMonth() + 1)).slice(-2) + '.' + sunday.getFullYear() + ' - ';
+        const title = 'Darowizny ' + ("0" + monday.getDate()).slice(-2) + '.' + ("0" + (monday.getMonth() + 1)).slice(-2) + '-' + ("0" + sunday.getDate()).slice(-2) + '.' + ("0" + (sunday.getMonth() + 1)).slice(-2) + '.' + sunday.getFullYear() + ' - ';
         $('#results').prepend("<p style='font-weight:bold;font-size:16px;color:red;'>" + sum + " - " + title + sum.toLocaleString('nl').replaceAll('.', ' ') + "</p>");
         var pointMatch = $("details").text().match(pointsRegex);
         let points = parseInt(pointMatch[1].replace(")", "").replace("(", "").replaceAll(".", ""));
