@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Copy helper
 // @namespace    https://comastuff.com/
-// @version      0.1
+// @version      0.2
 // @description  Skrypt ten pozwala na szybsze kopiowanie danych w profilu użytkownika
 // @author       Neshi
 // @match        https://*.ogame.gameforge.com/game/admin2/kontrolle.php?uid=*
@@ -72,6 +72,7 @@ function selectElementContents(el) {
     window.getSelection().removeAllRanges();
 }
 
+
 if ($('form[action*="kontrolle.php"]').length > 0){
     $('form[action*="kontrolle.php"] table tr:eq(0) th').append('<button class="copyNick" type="button" style="margin-left:20px">Kopiuj nick</<button> <button class="copyZWG" type="button" style="margin-left:20px">Kopiuj do ZWG</<button> <button class="copyProfile" type="button" style="margin-left:20px">Kopiuj profil</<button>')
 
@@ -80,7 +81,7 @@ if ($('form[action*="kontrolle.php"]').length > 0){
     });
 
     $('button.copyZWG').click(function() {
-        copyTextToClipboard($('form[action*="kontrolle.php"] table tr:eq(0) th').get(0).firstChild.nodeValue +' '+ $('form[action*="kontrolle.php"] table tr:eq(1) td:last').text());
+        copyTextToClipboard($('form[action*="kontrolle.php"] table tr:eq(0) th').get(0).firstChild.nodeValue +' ('+ $('form[action*="kontrolle.php"] table tr:eq(1) td:last').text()+')');
     });
 
     $('.textbox').attr('id','profileData');
