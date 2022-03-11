@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         SGO+ Support Helper
 // @namespace    https://comastuff.com/
-// @version      1.0
+// @version      1.1
 // @description  Skrypt ten przypisuje przy temacie nick operatora/ów bazując na informacjach jakie są umieszczone na stronie https://ogamepl.comastuff.com/ . Przy nieobsadzonych uniach nick nie jest dodawany. Dodaje również link przy kodach API w zgłoszeniach.
 // @author       Neshi
 // @match        https://coma.gameforge.com/ticket/index.php?page=tickets*
@@ -54,7 +54,7 @@
 
     if (window.location.hostname == 'coma.gameforge.com'){
         if (window.location.search.indexOf('page=answer')>0){
-            let reportRegex = /[crs]r-pl-\d{2,3}-[^.*]{40}/g;
+            let reportRegex = /[crsm]r-pl-\d{2,3}-[^.*]{40}/g;
             let prntScRegex = /prnt.sc\/\w*\b/g;
 
             jQuery('table.nav div').each(function(){ 
