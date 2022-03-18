@@ -1,11 +1,12 @@
 // ==UserScript==
 // @name         Copy helper
 // @namespace    https://comastuff.com/
-// @version      0.2
+// @version      0.3
 // @description  Skrypt ten pozwala na szybsze kopiowanie danych w profilu użytkownika
 // @author       Neshi
 // @match        https://*.ogame.gameforge.com/game/admin2/kontrolle.php?uid=*
 // @match        https://*.ogame.gameforge.com/game/admin2/login_log.php?uid=*
+// @exclude      https://*.ogame.gameforge.com/game/admin2/kontrolle.php?uid=*&shortadd=1
 // @icon         https://support.gameforge.com/template/games/ogame/favicon.ico
 // @updateURL    https://github.com/Neshi/Og/raw/main/scripts/CopyHelper.user.js
 // @downloadURL  https://github.com/Neshi/Og/raw/main/scripts/CopyHelper.user.js
