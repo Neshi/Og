@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Copy helper
 // @namespace    https://comastuff.com/
-// @version      0.3
+// @version      0.4
 // @description  Skrypt ten pozwala na szybsze kopiowanie danych w profilu użytkownika
 // @author       Neshi
 // @match        https://*.ogame.gameforge.com/game/admin2/kontrolle.php?uid=*
@@ -93,7 +93,7 @@ if ($('form[action*="kontrolle.php"]').length > 0){
 }
 
 //login table
-if ($('.textbox table:eq(1) tr').length > 2 ){
+if ($('.textbox table:eq(1) tr').length > 2 && $('form[action*="kontrolle.php"]').length == 0){
     $('.textbox table:eq(1)').attr('id','loginTable');
     $('.textbox table:eq(1) tr:eq(0)').remove();
     $('.textbox table:eq(1)').before('<button class="copyTable" type="button" style="float:right;margin-bottom:5px;" >Kopiuj tabele!</button>')
