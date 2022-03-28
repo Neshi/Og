@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Bash Helper (beta)
 // @namespace    https://comastuff.com/
-// @version      1.0
+// @version      1.1
 // @description  Skrypt ten sprawdza czy została naruszona zasada Bash
 // @author       Neshi
 // @match        https://*.ogame.gameforge.com/game/admin2/flottenlog.php?uid=*&touser=*
@@ -74,6 +74,6 @@ console.log('attacktimetable',attackTimeTable);
 }
 
 
-$('#GM_ActivateButton').after('<button class="countBash" type="button" style="margin-left:10px;" >Sprawdź bash! (beta)</button>')
+$('.contbox .content h3:first').after('<button class="countBash" type="button" style="margin-left:10px;" >Sprawdź bash! (beta)</button>')
 
 $('.countBash').click(function(){ CountBash(); });
