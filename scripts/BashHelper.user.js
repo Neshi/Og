@@ -74,6 +74,6 @@ console.log('attacktimetable',attackTimeTable);
 }
 
 
-$('.contbox .content h3:first').after('<button class="countBash" type="button" style="margin-left:10px;" >Sprawdź bash! (beta)</button>')
+$('.contbox .content h3:first').append('<button class="countBash" type="button" style="margin-left:10px;" >Sprawdź bash! (beta)</button>')
 
 $('.countBash').click(function(){ CountBash(); });
