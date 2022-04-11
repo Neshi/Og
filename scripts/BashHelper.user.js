@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Bash Helper (beta)
 // @namespace    https://comastuff.com/
-// @version      2.0
+// @version      2.1
 // @description  Skrypt ten sprawdza czy została naruszona zasada Bash
 // @author       Neshi
 // @match        https://*.ogame.gameforge.com/game/admin2/flottenlog.php?uid=*&touser=*
@@ -42,10 +42,11 @@ function CountBash(){
         var returnTable = $(this).next();
         var nextRow = returnTable.find('tr:first td.no:first-child').text();
 
-        if (nextRow.indexOf('Powrót na planetę') < 0){
-            return;
+        var backTimeString = dateString;
+        if (nextRow.indexOf('Powrót na planetę') > 0){
+            backTimeString = returnTable.find('tr:eq(3) td:first').text();
         }
-        var backTimeString = returnTable.find('tr:eq(3) td:first').text();
+        
 
         console.log("Czas dolotu: ", dateString,"; Czas powrotu: ",backTimeString);
         if (dateString === backTimeString){
