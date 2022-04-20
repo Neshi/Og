@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         Bash Helper (beta)
+// @name         Bash Helper
 // @namespace    https://comastuff.com/
-// @version      2.1
+// @version      2.2
 // @description  Skrypt ten sprawdza czy została naruszona zasada Bash
 // @author       Neshi
 // @match        https://*.ogame.gameforge.com/game/admin2/flottenlog.php?uid=*&touser=*
@@ -10,9 +10,6 @@
 // @downloadURL  https://github.com/Neshi/Og/raw/main/scripts/BashHelper.user.js
 // @grant        none
 // ==/UserScript==
-
-
-
 
 function subtractTimeFromDate(objDate, intHours) {
     var numberOfMlSeconds = objDate.getTime();
@@ -43,7 +40,7 @@ function CountBash(){
         var nextRow = returnTable.find('tr:first td.no:first-child').text();
 
         var backTimeString = dateString;
-        if (nextRow.indexOf('Powrót na planetę') > 0){
+        if (nextRow.indexOf('Powrót na planetę') >= 0){
             backTimeString = returnTable.find('tr:eq(3) td:first').text();
         }
         
@@ -60,7 +57,7 @@ function CountBash(){
     });
 
 
-console.log('attacktimetable',attackTimeTable);
+//console.log('attacktimetable',attackTimeTable);
     var allCoords = [...new Set(attackTimeTable.map(item=>item.coords))];
     //console.log(allCoords);
 
@@ -74,10 +71,10 @@ console.log('attacktimetable',attackTimeTable);
         console.log(firstAttackTime);
         console.log(previous24Hours);
         bashTable.push(coordsAttackList[0]);
-        for(var i=0;i<coordsAttackList.length;i++){
-            if (coordsAttackList[i].time>previous24Hours && coordsAttackList[i].time<firstAttackTime){
+        for(var i=1;i<coordsAttackList.length;i++){
+            //if (coordsAttackList[i].time>previous24Hours && coordsAttackList[i].time<firstAttackTime){
                 bashTable.push(coordsAttackList[i]);
-            }
+            //}
         }
     }
 
@@ -95,7 +92,7 @@ console.log('attacktimetable',attackTimeTable);
 
     $('.textbox h4').after(output);
 
-    console.log(bashTable);
+    //console.log(bashTable);
 }
 
 
