@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Sumator
 // @namespace    https://comastuff.com/
-// @version      1.1
+// @version      1.2
 // @description  Skrypt ten pozwala na szybsze liczenie surowców podczas wyliczania darowizn. Ustawia także domyślne parametry toola.
 // @author       Neshi
 // @updateURL    https://github.com/Neshi/Og/raw/main/scripts/Sumator.user.js
@@ -72,6 +72,7 @@ function CalculateSum() {
     }
     
     $('details summary').after(textAfter);
+    $('details').attr('open','open');
     $('details').append('===================================================');
     console.log('sum', sum.toLocaleString('nl'));
     return false;
