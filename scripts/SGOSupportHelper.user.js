@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         SGO+ Support Helper
 // @namespace    https://comastuff.com/
-// @version      1.4
+// @version      1.5
 // @description  Skrypt ten przypisuje przy temacie nick operatora/ów bazując na informacjach jakie są umieszczone na stronie https://ogamepl.comastuff.com/ . Przy nieobsadzonych uniach nick nie jest dodawany. Dodaje również link przy kodach API w zgłoszeniach.
 // @author       Neshi
 // @match        https://coma.gameforge.com/ticket/index.php?page=tickets*
@@ -139,9 +139,9 @@ if (window.location.hostname == 'coma.gameforge.com'){
         $('table table table tr:gt(2)').each(function(){
             let currentServerText = $(this).find('td:eq(2)').text();
             if (currentServerText != '00'){
-                let go = uniSettings.find(x=>x.key==currentServerText).value;
-                if (go.length>0){
-                    $(this).find('td:eq(1)').append(' ('+go+')')
+                let go = uniSettings.find(x=>x.key==currentServerText);
+                if (go != undefined && go.value.length>0){
+                    $(this).find('td:eq(1)').append(' ('+go.value+')')
                 }
             }
         });
@@ -150,8 +150,8 @@ if (window.location.hostname == 'coma.gameforge.com'){
         var params = new Proxy(new URLSearchParams(window.location.href), {
             get: (searchParams, prop) => searchParams.get(prop),
         });
-        console.log(params.id);
-        console.log(params.value);
+        //console.log(params.id);
+        //console.log(params.value);
         jQuery('table.nav:first tr:first').after('<tr><td>&nbsp;</td><td class="text"><a href="https://coma.gameforge.com/ticket/index.php?page=answer&action=view&id='+params.id+'&value='+params.value+'&preview=1">Przejdź do podglądu zgłoszenia</a></td></tr>')
 
     }
