@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Sumator
 // @namespace    https://comastuff.com/
-// @version      1.2
+// @version      1.3
 // @description  Skrypt ten pozwala na szybsze liczenie surowców podczas wyliczania darowizn. Ustawia także domyślne parametry toola.
 // @author       Neshi
 // @updateURL    https://github.com/Neshi/Og/raw/main/scripts/Sumator.user.js
@@ -23,7 +23,7 @@ function getPreviousMonday(pickedDate) {
     var day = date.getDay();
     var prevMonday = new Date(pickedDate);
     if (date.getDay() == 0) {
-        prevMonday.setDate(date.getDate() - 7);
+        prevMonday.setDate(date.getDate() - 6);
     } else {
         prevMonday.setDate(date.getDate() - (day - 1));
     }
