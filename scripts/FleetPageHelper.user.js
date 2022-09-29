@@ -12,6 +12,9 @@
 // @grant        none
 // ==/UserScript==
 
+
+//copy helper
+
 function fallbackCopyTextToClipboard(text) {
     var textArea = document.createElement('textarea');
     textArea.value = text;
@@ -36,16 +39,19 @@ function copyTextToClipboard(text) {
         fallbackCopyTextToClipboard(text);
         return
     }
-    navigator.clipboard.writeText(text).then(function() {
+    navigator.clipboard.writeText(text).then(function () {
         console.log('Async: Copying to clipboard was successful!')
-    }, function(err) {
+    }, function (err) {
         console.error('Async: Could not copy text: ', err)
     })
 }
 
-    $('table:has(tr)').before('<button class="copyTable" type="button" style="float:right;margin-bottom:5px;" >Kopiuj tabele!</button>')
+$('table:has(tr)').before('<button class="copyTable" type="button" style="float:right;margin-bottom:5px;" >Kopiuj tabele!</button>')
 
-    $('button.copyTable').click(function() {
-        copyTextToClipboard($('button.copyTable').next()[0].outerHTML.replaceAll('flottenlog.php', window.location.origin + window.location.pathname));
-    });
+$('button.copyTable').click(function () {
+    copyTextToClipboard($('button.copyTable').next()[0].outerHTML.replaceAll('flottenlog.php', window.location.origin + window.location.pathname));
+});
+
+
+
 
