@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Sumator
 // @namespace    https://comastuff.com/
-// @version      2.1
+// @version      2.2
 // @description  Skrypt ten pozwala na szybsze liczenie surowców podczas wyliczania darowizn. Ustawia także domyślne parametry toola. Pozwala także na sumowanie liczby statków w ruchach flot
 // @author       Neshi
 // @updateURL    https://github.com/Neshi/Og/raw/main/scripts/Sumator.user.js
@@ -218,11 +218,14 @@ function CountFleet(countPoints) {
                 var deuter = (ships[i].count * shipDetails.deuter);
                 var deuterString = deuter == 0 ? '-' : deuter.toLocaleString('nl');
 
-                var debris = ((metal == 0 ? 1 : metal) + (crystal == 0 ? 1 : crystal)) * debrisFactor;
-                var debrisString = debris == 0 ? '-' : debris.toLocaleString('nl');
+                var debrisMetal = (metal == 0 ? 1 : metal) * debrisFactor;;
+                var debrisCrystal = (crystal == 0 ? 1 : crystal) * debrisFactor;
+                var debrisMetalString = debrisMetal == 0 ? '-' : debrisMetal.toLocaleString('nl');
+                var debrisCrystalString = debrisCrystal == 0 ? '-' : debrisCrystal.toLocaleString('nl');
 
                 ships[i].resources = '<u>' + ships[i].totalPoints.toLocaleString('nl') +
-                    '</u> (<span style=\"color:#5454d7;\">' + metalString + '</span>/<span style=\"color:green;\">' + crystalString + '</span>/<span style=\"color:aqua;\">' + deuterString + '</span>) - PZ <span style="color:red;\">' + debrisString + '</span>';
+                    '</u> (<span style=\"color:#5454d7;\">' + metalString + '</span>/<span style=\"color:green;\">' + crystalString + '</span>/<span style=\"color:aqua;\">' + deuterString
+                    + '</span>) - PZ (<span style="color:#5454d7;\">' + debrisMetalString + '</span>/<span style="color:green;\">' + debrisCrystalString + '</span>)';
             }
 
         }
