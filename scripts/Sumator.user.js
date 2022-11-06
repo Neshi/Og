@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Sumator
 // @namespace    https://comastuff.com/
-// @version      2.2
+// @version      2.3
 // @description  Skrypt ten pozwala na szybsze liczenie surowców podczas wyliczania darowizn. Ustawia także domyślne parametry toola. Pozwala także na sumowanie liczby statków w ruchach flot
 // @author       Neshi
 // @updateURL    https://github.com/Neshi/Og/raw/main/scripts/Sumator.user.js
@@ -196,7 +196,7 @@ function CountFleet(countPoints) {
         if (currentShip != undefined) {
             currentShip.count = currentShip.count + parseInt(shipLine[1].trim());
         } else {
-            ships.push({ shipName: shipLine[0].trim(), count: parseInt(shipLine[1].trim()), resources: '', totalPoints: 0 })
+            ships.push({ shipName: shipLine[0].trim(), count: parseInt(shipLine[1].trim()), resources: '', totalPoints: 0, totalDebris: 0 })
         }
 
 
@@ -223,6 +223,8 @@ function CountFleet(countPoints) {
                 var debrisMetalString = debrisMetal == 0 ? '-' : debrisMetal.toLocaleString('nl');
                 var debrisCrystalString = debrisCrystal == 0 ? '-' : debrisCrystal.toLocaleString('nl');
 
+                ships[i].totalDebris = debrisMetal + debrisCrystal;
+
                 ships[i].resources = '<u>' + ships[i].totalPoints.toLocaleString('nl') +
                     '</u> (<span style=\"color:#5454d7;\">' + metalString + '</span>/<span style=\"color:green;\">' + crystalString + '</span>/<span style=\"color:aqua;\">' + deuterString
                     + '</span>) - PZ (<span style="color:#5454d7;\">' + debrisMetalString + '</span>/<span style="color:green;\">' + debrisCrystalString + '</span>)';
@@ -245,7 +247,7 @@ function CountFleet(countPoints) {
         }
         output += '</ul>';
         if (countPoints) {
-            output += '<p>Suma: ' + ships.sum('totalPoints').toLocaleString('nl') + '</p>';
+            output += '<p>Suma: ' + ships.sum('totalPoints').toLocaleString('nl') + '<br/>Suma PZ: '+ ships.sum('totalDebris').toLocaleString('nl') +'</p>';
         }
         output += '<br/>'
     }
