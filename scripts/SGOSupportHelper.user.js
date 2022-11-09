@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         SGO+ Support Helper
 // @namespace    https://comastuff.com/
-// @version      1.5
+// @version      1.6
 // @description  Skrypt ten przypisuje przy temacie nick operatora/ów bazując na informacjach jakie są umieszczone na stronie https://ogamepl.comastuff.com/ . Przy nieobsadzonych uniach nick nie jest dodawany. Dodaje również link przy kodach API w zgłoszeniach.
 // @author       Neshi
 // @match        https://coma.gameforge.com/ticket/index.php?page=tickets*
@@ -85,6 +85,7 @@ if (window.location.hostname == 'coma.gameforge.com'){
     if (window.location.search.indexOf('page=answer')>0){
         let reportRegex = /[crsm]r-pl-\d{2,3}-[^.*]{40}/g;
         let prntScRegex = /prnt.sc\/\w*\b/g;
+        let gyozoScRegex = /gyazo.com\/\w*\b/g;
 
         jQuery('table.nav div').each(function(){ 
             var match;
@@ -104,6 +105,25 @@ if (window.location.hostname == 'coma.gameforge.com'){
                 });
                 for(var i=0;i<matches.length;i++){
                     tdHtml = tdHtml.replace(matches[i],matches[i]+'&nbsp;<a href="https://nomoreangel.de/api-reader/?apiid='+matches[i]+'" target="_blank" title="Otwórz w nowym oknie API reader">(Przeglądaj)</a>')
+                }
+                jQuery(this).html(tdHtml);
+            }
+
+            matches = [];
+            if (gyozoScRegex.test(tdHtml)){
+                match = tdHtml.match(gyozoScRegex);
+                if (match){
+                    matches.push(match[1]);
+                    console.log(match[1]);
+                }
+                while (match = gyozoScRegex.exec(tdHtml)){
+                    matches.push(match[0]);
+                }
+                matches = matches.filter(function(item, pos) {
+                    return matches.indexOf(item) == pos;
+                });
+                for(var i=0;i<matches.length;i++){
+                    tdHtml = tdHtml.replace(matches[i],matches[i]+'&nbsp;<a href="//'+matches[i]+'" target="_blank" title="Otwórz w nowym oknie">(Przeglądaj)</a>')
                 }
                 jQuery(this).html(tdHtml);
             }
