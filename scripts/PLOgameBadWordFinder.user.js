@@ -3,10 +3,13 @@
 // @namespace      Shole Update
 // @description    Findet BadWords in User- und Planetennamen
 // @include        *://*.ogame.gameforge.*/game/admin2/uebersicht.php?user*
+// @author       Shole, v0ldem0rt, Neshi
 // @version        29/12/2022
 // @grant        GM_addStyle
 // @grant        GM_xmlhttpRequest
 // @grant        GM_getValue
+// @updateURL    https://github.com/Neshi/Og/raw/main/scripts/PLOgameBadWordFinder.user.js
+// @downloadURL  https://github.com/Neshi/Og/raw/main/scripts/PLOgameBadWordFinder.user.js
 // ==/UserScript==
 //** Copyright © 2011 by Holunder für die ogame.de Community. **
 //** based on the BadCharFinder from Kelder/ogame.org**
