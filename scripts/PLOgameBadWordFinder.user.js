@@ -4,7 +4,7 @@
 // @description    Findet BadWords in User- und Planetennamen
 // @include        *://*.ogame.gameforge.*/game/admin2/uebersicht.php?user*
 // @author       Shole, v0ldem0rt, Neshi
-// @version        29/12/2022
+// @version        29/12/2022v2
 // @grant        GM_addStyle
 // @grant        GM_xmlhttpRequest
 // @grant        GM_getValue
@@ -27,7 +27,7 @@
 	var activateButton = createEl({n: 'button', a: {'@id':'GM_ActivateButton', name:'GM_ActivateButton', textContent: 'Wyszukaj wulgi' }},header)
 						.addEventListener('click',DoModify,true);
 
-
+	const checkSpecialCharacters = false;
 
 
 	function DoModify(){
@@ -117,14 +117,17 @@
 							}
 						}
 						logitem.innerHTML = replacementHTML;
+						if (!checkSpecialCharacters){
+							continue;
+						}
 					}
 					var arr = test.match(badwordsRealRE);
 					if (arr != null) {
 						count2++;
-						var found = createElAfter({n: 'span', a: {'@class':'badwordheader', textContent: 'BadWord:'}}, origLogItem);
+						//var found = createElAfter({n: 'span', a: {'@class':'badwordheader', textContent: 'ponieważ:'}}, origLogItem);
 						for (var x in arr) {
-							// logitem.innerHTML += "(found: " + arr[x] + ")";
-							createEl({n: 'span', a: {'@class':'badword', textContent: arr[x] }}, found);
+							 logitem.innerHTML += " <span style=\"font-size:0.8em;\">(ponieważ: " + arr[x] + ")</span>";
+							createEl({n: 'span', a: {'@class':'badword', textContent: arr[x] }});//, found);
 						}
 					}
 
