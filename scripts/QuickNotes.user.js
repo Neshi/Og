@@ -17,7 +17,7 @@ if (document.URL.indexOf("/game/admin2/seenotes.php") > -1 && document.URL.index
     document.evaluate("/html/body/div[5]/div[2]/div/h3", document, null, XPathResult.ANY_TYPE, null).iterateNext().appendChild(addNote);
     document.getElementById("splittedNotesButton").addEventListener('click',splitNoteString,true);
 
-    if (window.location.search.indexOf('quickMessage')){
+    if (window.location.search.indexOf('quickMessage') > -1){
         const urlParams = new URLSearchParams(window.location.search);
         document.getElementById("noteToSplit").value = urlParams.get("quickMessage");
     }
