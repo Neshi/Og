@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Quick notes
-// @version      2.5
+// @version      2.6
 // @description  Skrypt ten pozwala na szybsze dodawanie notatek, jeśli notatka będzie za długo podzieli ją. Automatycznie ją anonimizuje korzystając z https://art.comastuff.com/anonymous.php
 // @author       v0ldem0rt, Neshi
 // @match        http*://*.ogame.gameforge.com/game/admin2/seenotes.php?uid=*&notetyp=1
@@ -14,7 +14,7 @@
 if (document.URL.indexOf("/game/admin2/seenotes.php") > -1 && document.URL.indexOf("notetyp=1") > -1) {
     var addNote = document.createElement("div");
     addNote.innerHTML = '<textarea placeholder="Insert note body here.." id="noteToSplit" style="width: 100%" rows="10"></textarea><button type="button" id="splittedNotesButton">Save notes</button>';
-    document.evaluate("/html/body/div[5]/div[2]/div", document, null, XPathResult.ANY_TYPE, null).iterateNext().appendChild(addNote);
+    document.evaluate("/html/body/div[5]/div[2]/div/h3", document, null, XPathResult.ANY_TYPE, null).iterateNext().appendChild(addNote);
     document.getElementById("splittedNotesButton").addEventListener('click',splitNoteString,true);
 }
 
