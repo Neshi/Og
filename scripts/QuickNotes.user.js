@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Quick notes
-// @version      2.7
+// @version      2.7.1
 // @description  Skrypt ten pozwala na szybsze dodawanie notatek, jeśli notatka będzie za długo podzieli ją. Automatycznie ją anonimizuje korzystając z https://art.comastuff.com/anonymous.php
 // @author       v0ldem0rt, Neshi
-// @match        http*://*.ogame.gameforge.com/game/admin2/seenotes.php?uid=*&notetyp=1
+// @match        http*://*.ogame.gameforge.com/game/admin2/seenotes.php?uid=*&notetyp=1*
 // @updateURL    https://github.com/Neshi/Og/raw/main/scripts/QuickNotes.user.js
 // @downloadURL  https://github.com/Neshi/Og/raw/main/scripts/QuickNotes.user.js
 // @grant        GM_xmlhttpRequest
@@ -13,14 +13,16 @@
 //note page
 if (document.URL.indexOf("/game/admin2/seenotes.php") > -1 && document.URL.indexOf("notetyp=1") > -1) {
     var addNote = document.createElement("div");
-    addNote.innerHTML = '<textarea placeholder="Insert note body here.." id="noteToSplit" style="width: 100%" rows="10"></textarea><button type="button" id="splittedNotesButton">Save notes</button>';
+    var textareaValue = 'Insert note body here..';
+    if (window.location.search.indexOf('quickMessage') > -1){
+        const urlParams = new URLSearchParams(window.location.search);
+        textareaValue = urlParams.get("quickMessage");
+    }
+    addNote.innerHTML = '<textarea placeholder="'+textareaValue+'" id="noteToSplit" style="width: 100%" rows="10"></textarea><button type="button" id="splittedNotesButton">Save notes</button>';
     document.evaluate("/html/body/div[5]/div[2]/div/h3", document, null, XPathResult.ANY_TYPE, null).iterateNext().appendChild(addNote);
     document.getElementById("splittedNotesButton").addEventListener('click',splitNoteString,true);
 
-    if (window.location.search.indexOf('quickMessage') > -1){
-        const urlParams = new URLSearchParams(window.location.search);
-        document.getElementById("noteToSplit").value = urlParams.get("quickMessage");
-    }
+    
 }
 
 function getFirstLine(text) {
