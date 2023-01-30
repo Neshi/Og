@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Sumator
 // @namespace    https://comastuff.com/
-// @version      2.4
+// @version      2.5
 // @description  Skrypt ten pozwala na szybsze liczenie surowców podczas wyliczania darowizn. Ustawia także domyślne parametry toola. Pozwala także na sumowanie liczby statków w ruchach flot
 // @author       Neshi
 // @updateURL    https://github.com/Neshi/Og/raw/main/scripts/Sumator.user.js
@@ -61,6 +61,7 @@ if (window.location.host == "art.comastuff.com") {
         var pointMatch = $("details").text().match(pointsRegex);
         let points = parseInt(pointMatch[1].replace(")", "").replace("(", "").replaceAll(".", ""));
         let maxResources = points < 20000 ? 100000 : points * 5;
+        maxResources = maxResources > 500000000 ? 500000000 : maxResources;
         let canReciveResources = maxResources - sum;
         var textAfter = title + sum.toLocaleString('nl').replaceAll('.', ' ') +
             '<br/>===================================================<br/>' +
